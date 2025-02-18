@@ -1,0 +1,16 @@
+
+Membership Inference Attack Report
+----------------------------------
+- Dataset: Texas-100 (first 200 records considered)
+- Model: 4-layer dense neural network (Loaded as TensorFlow SavedModel)
+- Attack Method: Confidence Score + Entropy Ranking
+- Selected Top 100 Most Likely Members
+- Output File: members.txt
+
+Methodology:
+We used a ranking approach where we computed the confidence score (maximum softmax probability)
+and subtracted the entropy of the softmax distribution. Higher confidence and lower entropy indicate
+that a sample is more likely to have been in the training set.
+
+Results:
+The IDs of the inferred training samples are saved in 'members.txt'.
