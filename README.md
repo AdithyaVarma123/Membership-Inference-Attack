@@ -58,6 +58,7 @@ entropies = np.apply_along_axis(lambda x: entropy(x), 1, predictions)
 # Ranking score and selection
 ranking_score = confidences - entropies
 member_indices = np.argsort(ranking_score)[-100:]
+```
 
 ## Results and Analysis
 The Membership Inference Attack successfully identified the top 100 samples that were most likely part of the training set. The confidence and entropy-based ranking method proved effective, with the results saved in members.txt. The generated report summarizes the methodology and findings.
